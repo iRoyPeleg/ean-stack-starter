@@ -1,0 +1,92 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.tasks-container {
+  gap: 10px;
+  overflow: auto;
+  min-height: 0;
+  padding-right: 10px;
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  grid-template-columns: auto 1fr auto auto;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.header-title {
+  font-weight: bold;
+}
+
+.description {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.remove-task {
+  background: none repeat scroll 0 0 transparent;
+  border: medium none;
+  border-spacing: 0;
+  font-weight: normal;
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  text-indent: 0;
+  cursor: pointer;
+  padding: 4px 2px;
+  border-radius: 4px;
+
+  &:hover {
+    background: rgba(0,0,0,0.2);
+  }
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.add-task {
+  background: blue;
+  color: white;
+  height: 32px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background: darkblue;
+  }
+}
+
+.error-message {
+  color: red;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 4px;
+}
+
+input[type=text] {
+  height: 32px;
+  box-sizing: border-box;
+}

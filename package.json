@@ -1,0 +1,18 @@
+{
+  "name": "ean-stack-starter",
+  "version": "1.0.0",
+  "description": "*EAN Stack Starter Boilerplate",
+  "scripts": {
+    "install:all": "pnpm run install:client && pnpm run install:server",
+    "install:client": "cd client && pnpm install",
+    "install:server": "cd server && pnpm install",
+    "start:client": "cd client && ng serve",
+    "start:server": "cd server && pnpm start",
+    "build:client": "cd client && ng build --prod",
+    "build:server": "cd server && pnpm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Roy Peleg",
+  "license": "MIT"
+}

@@ -1,0 +1,39 @@
+<h1>Tasks 📋</h1>
+
+<div class="tasks-container">
+	@for (task of tasks(); track task.id; let first = $first) {
+		@if (first) {
+			<div class="header-title">Title</div>
+			<div class="header-title">Description</div>
+			<div class="header-title">Completed</div>
+			<div class="header-title">Delete</div>
+		}
+
+		<div class="title" [class.completed]="task.completed">{{task.title}}</div>
+		<div class="description" [class.completed]="task.completed">{{task.description}}</div>
+		<input [checked]="task.completed" type="checkbox" name="completed" (click)="updateTask(task.id, !task.completed)">
+		<button class="remove-task" (click)="removeTask(task.id)">❌</button>
+	} @empty {
+		<div>No Tasks</div>
+	}
+</div>
+
+<div class="inputs">
+	<div class="input-container">
+		<label for="title">Title</label>
+		<input [(ngModel)]="title" type="text" id="title" name="title">
+	</div>
+
+	<div class="input-container">
+		<label for="description">Description</label>
+		<input [(ngModel)]="description" type="text" id="description" name="description">
+	</div>
+
+	@if (error) {
+		<div class="error-message">Title or Description cannot be empty.</div>
+	}
+
+	<button class="add-task" (click)="addTask()">Add</button>
+</div>
+
+
